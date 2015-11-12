@@ -1,0 +1,45 @@
+.form-container
+  @extend %dark_gray_theme
+  flex: 1
+
+  .text-wrapper
+    background: none
+    text-align: center
+    width: 70%
+    margin: 20% auto 0% auto
+
+    input[type=text], input[type=email], input[type=tel], input[type=password]
+      font-weight: $bold_font_weight
+      font-size: $large_font_size
+      border-bottom: 1px solid $light_gray
+      border-radius: 0
+
+    label
+      margin: 0.5rem 0
+
+    button
+      margin: 2.5rem auto 0
+
+    .login-link
+      margin-top: 1.5rem
+      font-size: $small_font_size
+
+    a
+      color: $ic_blue
+      font-weight: $bold_font_weight
+
+    .password-match
+      @extend %flex_container_center
+      margin: 1rem 0
+
+      img
+        height: 1rem
+
+      p
+        font-size: $small_font_size
+        margin: 0 0 0 1rem
+
+    .slimer-button
+      @extend .button
+      padding: 0.65rem
+      width: 70%

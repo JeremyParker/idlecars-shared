@@ -1,0 +1,64 @@
+$dark_gray: rgb(25,25,25)
+$alpha_black: rgba(34,34,34,0.95)
+$light_gray: rgb(230,230,230)
+$medium_gray: rgb(120,120,120)
+$light_red: rgb(240,0,16)
+$dark_orange: rgb(255,128,0)
+$medium_green: rgb(0,153,0)
+
+$placeholder_gray: rgb(45,45,45)
+
+$ic_blue: rgb(0,128,255)
+$overlay_blue: rgba(0,138,255, 0.8)
+
+$gray_gradient: linear-gradient(rgb(231, 231, 231) 15%, rgb(191, 191, 191) 95%)
+
+%blue_theme
+  background: $ic_blue
+  color: white
+
+%alpha_blue_theme
+  background: $overlay_blue
+  color: white
+
+%gray_theme
+  background: $light_gray
+
+%medium_gray_theme
+  background: $medium_gray
+
+%black_theme
+  background: black
+  color: white
+  a
+    color: white
+
+%white_theme
+  background: white
+
+%alpha_black_theme
+  background: $alpha_black
+
+%dark_gray_theme
+  background: $dark_gray
+  color: white
+
+%disabled_theme
+  background: $medium_gray
+  color: $light_gray
+  opacity: 0.5
+
+.m-gray
+  color: $medium_gray
+
+.ic-blue
+  color: $ic_blue
+
+.color-red
+  color: red
+
+.m-green
+  color: $medium_green
+
+.d-orange
+  color: $dark_orange

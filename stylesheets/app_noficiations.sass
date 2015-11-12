@@ -1,0 +1,27 @@
+ic-app-notifications
+  .container, .content
+    width: 100%
+
+  .container
+    position: relative
+    z-index: 9999
+
+  .content
+    @extend %dark_gray_theme
+    position: absolute
+
+  .content-row
+    padding: 0.5rem 0.75rem
+    display: flex
+    align-items: center
+
+  img
+    height: 1.5rem
+    margin-right: 0.5rem
+
+  .message
+    flex: 1
+
+  .close
+    background: transparent
+    border: none

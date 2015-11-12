@@ -1,0 +1,72 @@
+%_base_button
+  border: 0
+  padding: 0
+  outline: 0
+  border-radius: 0
+  cursor: pointer
+
+%_general_button
+  @extend %_base_button
+  @extend %flex_container_center
+  font-weight: $bold_font_weight
+  width: 100%
+
+%_center_first_child
+  > *
+    text-align: center
+    flex: 1
+
+.clear-button
+  @extend %_base_button
+  background: transparent
+
+.button:disabled
+  @extend %disabled_theme
+
+.button
+  @extend %blue_theme
+  @extend %flex_container_center
+  @extend %_base_button
+  @extend %_center_first_child
+
+  display: block
+  text-align: center
+  width: 100%
+
+  padding: 1rem
+
+  font-weight: $bold_font_weight
+
+.circle-button
+  @extend %flex_container_center
+  font-weight: $bold_font_weight
+
+  border: none
+  border-radius: 50%
+
+  background: white
+  color: $ic-blue
+  opacity: 0.75
+
+  &:before
+    content: 'X'
+    margin: 0 auto
+
+.white-boarder-button
+  @extend %_general_button
+  @extend %_center_first_child
+  border: 1px solid white
+  background: transparent
+  padding: 1rem
+
+.alert-button
+  @extend .button
+  background: $light_red
+
+.cancel-button
+  @extend .button
+  background: $medium_gray
+
+.white-button
+  @extend .button
+  background: white

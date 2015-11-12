@@ -1,0 +1,30 @@
+label
+  display: block
+  margin-bottom: 0.25rem
+
+input[type=text], input[type=email], input[type=tel], input[type=password], input[type=date]
+  width: 100%
+
+  border: 0
+  padding: 0.5rem
+
+  margin-bottom: 0.75rem
+
+::placeholder
+  color: $placeholder_gray
+
+input.no-box
+  background: none
+  border: none
+  outline: none
+  text-align: center
+
+.radio, .checkbox
+  display: flex
+
+  label
+    margin-left: 0.5rem
+    flex: 1
+
+.invalid
+  color: red

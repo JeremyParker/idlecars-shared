@@ -1,0 +1,37 @@
+%fixed_background
+  @extend %alpha_black_theme
+  position: fixed
+  top: 0
+  bottom: 0
+  right: 0
+  left: 0
+
+.modal-background
+  @extend %fixed_background
+  display: flex
+  justify-content: center
+  align-items: center
+
+.modal-container
+  max-width: $page_max_width
+  height: 85%
+  @extend %flex_content
+  flex-direction: column
+  justify-content: center
+
+  padding: 0 $page_gutter
+
+  .close
+    align-self: flex-end
+
+  .close img
+    width: 2rem
+
+.modal-content
+  flex: 1
+  overflow-y: auto
+  color: white
+
+.modal-logo
+  width: 5rem
+  align-self: flex-end

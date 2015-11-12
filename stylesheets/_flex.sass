@@ -1,0 +1,27 @@
+%flex_container_column
+  display: flex
+  flex-direction: column
+
+%flex_container_center
+  display: flex
+  justify-content: center
+  align-items: center
+
+%flex_vertical_center
+  display: flex
+  align-items: center
+
+%flex_content
+  display: flex
+  flex: 1
+
+%flex_scrollable
+  flex: 1
+  overflow-y: scroll
+  -webkit-overflow-scrolling: touch
+
+.flex
+  @extend %flex_content
+
+.flex-column
+  @extend %flex_container_column
