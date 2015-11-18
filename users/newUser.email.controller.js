@@ -14,7 +14,7 @@ angular.module('idlecars')
   }];
 
   $rootScope.navGoNext = function() {
-    AppUserService.emailEntered()
+    AppUserService.emailEntered($scope.user);
   }
 
   $scope.validateForm = function() {
