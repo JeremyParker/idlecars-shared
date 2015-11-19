@@ -59,28 +59,28 @@ angular.module('idlecars')
 
     .state('user.email', {
       url: '/email',
-      data: {navbarInfo: {title: 'Email', enableBack: true, enableNext: true}},
+      data: {navbarInfo: {title: 'Email', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
       controller: 'user.email.controller',
     })
 
     .state('user.phonenumber', {
       url: '/phonenumber',
-      data: {navbarInfo: {title: 'Phone number', enableBack: true, enableNext: true}},
+      data: {navbarInfo: {title: 'Phone number', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
       controller: 'user.phoneNumber.controller',
     })
 
     .state('user.firstname', {
       url: '/firstname',
-      data: {navbarInfo: {title: 'First name', enableBack: true, enableNext: true}},
+      data: {navbarInfo: {title: 'First name', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
       controller: 'user.firstname.controller',
     })
 
     .state('user.lastname', {
       url: '/lastname',
-      data: {navbarInfo: {title: 'Last name', enableBack: true, enableNext: true}},
+      data: {navbarInfo: {title: 'Last name', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
       controller: 'user.lastname.controller',
     })
