@@ -2,8 +2,6 @@
 
 angular.module('idlecars')
 .controller('newUser.email.controller', function ($scope, $rootScope, AppUserService) {
-  $scope.user = {};
-
   $scope.fields = [{
     label: 'Enter your email address',
     placeholder: 'email@address.com',
