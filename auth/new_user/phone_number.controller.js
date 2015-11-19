@@ -28,9 +28,5 @@ angular.module('idlecars')
     });
   }
 
-  $scope.validateForm = function() {
-    $rootScope.navNextEnabled = $scope.fieldForm.$valid;
-  }
-
   NavbarService.validateInit($scope);
 });

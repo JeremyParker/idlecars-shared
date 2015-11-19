@@ -8,7 +8,7 @@ angular.module('idlecars')
   })
 
   $rootScope.navSave = function() {
-    AppUserService.userUpdated($scope.$$childHead.user)
+    UserService.patch($scope.$$childHead.user).then(AppUserService.userUpdated)
   }
 
   $scope.validateForm = function() {
