@@ -27,7 +27,8 @@
             img(src='/assets/images/error.png')
           p.color-red password doesn't match
 
-    single-choice(ng-if='choices', choices='choices')
+    single-choice(ng-if='choices', choices='choices', select='onselect')
+    p select is {{onselect}}
 
     button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
     button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
