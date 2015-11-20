@@ -15,10 +15,8 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content@': {
-          controller: function($scope) {
-            $scope.user = {};
-          },
           template: '<ui-view class="flex"/>',
+          controller: 'newUser.controller',
         }
       },
     })
@@ -40,6 +38,20 @@ angular.module('idlecars')
       data: {navbarInfo: {title: 'Email', enableBack: true, enableNext: true}},
       templateUrl: 'shared/users/form.html',
       controller: 'newUser.email.controller',
+    })
+
+    .state('newUser.firstname', {
+      url: '/firstname',
+      data: {navbarInfo: {title: 'First name', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'newUser.firstname.controller',
+    })
+
+    .state('newUser.lastname', {
+      url: '/lastname',
+      data: {navbarInfo: {title: 'Last name', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'newUser.lastname.controller',
     })
 
     .state('user', {
