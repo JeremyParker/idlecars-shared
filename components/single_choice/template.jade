@@ -2,7 +2,7 @@
   .section-row(ng-repeat="choice in choices track by $index", ng-click="click($index)")
     .row-content(ng-class='{"has-bar": !$last}')
       .choice {{choice}}
-      .checked(ng-if='select == $index')
+      .checked(ng-if='selectedIndex == $index')
         img(ng-src='/assets/images/Mark_Check.png')
 
 
