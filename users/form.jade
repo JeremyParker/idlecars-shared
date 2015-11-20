@@ -1,5 +1,6 @@
 .form-container
   .text-wrapper
+    label {{formTitle}}
     ng-form(name='fieldForm', novalidate)
       div(ng-repeat='field in fields')
         label(for="{{field.name}}") {{field.label}}
@@ -25,6 +26,8 @@
           .image-wrapper
             img(src='/assets/images/error.png')
           p.color-red password doesn't match
+
+    single-choice(ng-if='choices', choices='choices')
 
     button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
     button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
