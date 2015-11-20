@@ -6,7 +6,11 @@ angular.module('idlecars')
     templateUrl: 'shared/components/single_choice/template.html',
     controller: function ($scope) {
       if ($scope.choices) {
-        $scope.selectedIndex = 0;
+        var initIndex = $scope.choices.indexOf($scope.selectedItem)
+
+        if (initIndex > -1) { $scope.selectedIndex = initIndex }
+        else { $scope.selectedIndex = 0 }
+
         $scope.selectedItem = $scope.choices[$scope.selectedIndex];
 
         $scope.click = function (index) {
