@@ -3,10 +3,11 @@
     section
       label(for="{{label}}") {{label}}
 
-    section
-      div(ng-repeat="content in contents track by $index")
-        .content {{content}}
+    section.content-container
+      .content-row(ng-repeat="content in contents track by $index")
+        .title(ng-show='content.title') {{content.title}}:
+        .content {{content.content}}
 
     section
       div(ng-repeat="button in buttons track by $index")
-        button.button(ng-click="button['click']()") {{button.value}}
+        button.slimer-button(ng-click="button['click']()") {{button.value}}
