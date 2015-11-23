@@ -10,4 +10,10 @@
 
     section
       div(ng-repeat="button in buttons track by $index")
-        button.slimer-button(ng-click="button['click']()") {{button.value}}
+        button.slimer-button(ng-show="!button.dateOptions", ng-click="button['click']()") {{button.value}}
+
+        button.slimer-button(
+          ng-show="button.dateOptions"
+          pick-a-date="date",
+          pick-a-date-options="button.dateOptions",
+        ) {{button.value}}
