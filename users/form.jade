@@ -31,7 +31,11 @@
             p.color-red password doesn't match
 
     section
-      single-choice(choices='singleChoice.choices', selected-item='user[singleChoice.key]')
+      single-choice(
+        choices='singleChoice.choices',
+        selected-item='user[singleChoice.key]',
+        max-height='3.5',
+      )
 
       button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
       button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next

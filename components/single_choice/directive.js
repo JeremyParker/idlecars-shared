@@ -5,6 +5,11 @@ angular.module('idlecars')
   return {
     templateUrl: 'shared/components/single_choice/template.html',
     controller: function ($scope) {
+      if ($scope.maxHeight) {
+        // the basic height of each line is 48px and border is 2px
+        $scope.maxHeight = 48 * $scope.maxHeight + 2;
+      };
+
       if ($scope.choices) {
         var initIndex = $scope.choices.indexOf($scope.selectedItem)
 
@@ -22,6 +27,7 @@ angular.module('idlecars')
     scope: {
       choices: '=',
       selectedItem: '=',
+      maxHeight: '@',
     }
   };
 });
