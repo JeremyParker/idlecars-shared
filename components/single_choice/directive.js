@@ -10,19 +10,29 @@ angular.module('idlecars')
         $scope.maxHeight = 48 * $scope.maxHeight + 2;
       };
 
-      if ($scope.choices) {
-        var initIndex = $scope.choices.indexOf($scope.ngModel)
+      var getIndex = function () {
+        var choices = $scope.choices;
+        var model = $scope.ngModel;
 
-        if (initIndex > -1) { $scope.selectedIndex = initIndex }
-        else { $scope.selectedIndex = 0 }
+        for (var i = 0; i < choices.length; i++) {
+          if (choices[i].key == model || choices[i].value == model) {
+            return i;
+          }
+        };
+        return 0;
+      }
 
-        $scope.ngModel = $scope.choices[$scope.selectedIndex];
+      var loadModel = function (newModel, oldModel) {
+        $scope.selectedIndex = getIndex();
+        $scope.ngModel = $scope.choices[$scope.selectedIndex].key;
+      }
 
-        $scope.click = function (index) {
-          $scope.selectedIndex = index;
-          $scope.ngModel = $scope.choices[index];
-        }
-      };
+      $scope.$watch('ngModel', loadModel);
+
+      $scope.click = function (index) {
+        $scope.selectedIndex = index;
+        $scope.ngModel = $scope.choices[index].key;
+      }
     },
     scope: {
       choices: '=',

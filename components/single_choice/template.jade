@@ -3,4 +3,4 @@
     .row-content(ng-class='{"has-border": selectedIndex == $index}')
       .checked
         img(ng-class='{invisible: selectedIndex != $index}', ng-src='/assets/images/checkmark.svg')
-      .choice {{choice}}
+      .choice {{choice.value}}
