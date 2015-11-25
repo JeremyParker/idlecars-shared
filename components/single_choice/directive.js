@@ -23,8 +23,10 @@ angular.module('idlecars')
       }
 
       var loadModel = function (newModel, oldModel) {
-        $scope.selectedIndex = getIndex();
-        $scope.ngModel = $scope.choices[$scope.selectedIndex].key;
+        if ($scope.choices) {
+          $scope.selectedIndex = getIndex();
+          $scope.ngModel = $scope.choices[$scope.selectedIndex].key;
+        };
       }
 
       $scope.$watch('ngModel', loadModel);
