@@ -11,22 +11,22 @@ angular.module('idlecars')
       };
 
       if ($scope.choices) {
-        var initIndex = $scope.choices.indexOf($scope.selectedItem)
+        var initIndex = $scope.choices.indexOf($scope.ngModel)
 
         if (initIndex > -1) { $scope.selectedIndex = initIndex }
         else { $scope.selectedIndex = 0 }
 
-        $scope.selectedItem = $scope.choices[$scope.selectedIndex];
+        $scope.ngModel = $scope.choices[$scope.selectedIndex];
 
         $scope.click = function (index) {
           $scope.selectedIndex = index;
-          $scope.selectedItem = $scope.choices[index];
+          $scope.ngModel = $scope.choices[index];
         }
       };
     },
     scope: {
       choices: '=',
-      selectedItem: '=',
+      ngModel: '=',
       maxHeight: '@',
     }
   };
