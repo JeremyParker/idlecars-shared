@@ -13,13 +13,9 @@ angular.module('idlecars')
   $scope.validateForm = function() {
     $timeout(function () { $rootScope.navNextEnabled = $scope.$$childHead.fieldForm.$valid });
   }
-
-  $rootScope.navGoNext = function() {
-    UserService.patch($scope.user).then($scope.$$childHead.postPatch);
-  }
 })
 
-.controller('newUser.email.controller', function ($scope, AppUserService, NavbarService) {
+.controller('newUser.email.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
   $scope.fields = [{
     label: 'Enter your email address',
     placeholder: 'email@address.com',
@@ -29,12 +25,14 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $scope.postPatch = AppUserService.emailEntered;
+  $rootScope.navGoNext = function() {
+    UserService.patch($scope.user).then(AppUserService.emailEntered);
+  }
 
   NavbarService.validateInit($scope);
 })
 
-.controller('newUser.firstname.controller', function ($scope, AppUserService, NavbarService) {
+.controller('newUser.firstname.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
   $scope.fields = [{
     placeholder: 'First name',
     name: 'first_name',
@@ -43,12 +41,14 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $scope.postPatch = AppUserService.firstnameEntered;
+  $rootScope.navGoNext = function() {
+    UserService.patch($scope.user).then(AppUserService.firstnameEntered);
+  }
 
   NavbarService.validateInit($scope);
 })
 
-.controller('newUser.lastname.controller', function ($scope, AppUserService, NavbarService) {
+.controller('newUser.lastname.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
   $scope.fields = [{
     placeholder: 'Last name',
     name: 'last_name',
@@ -57,7 +57,9 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $scope.postPatch = AppUserService.lastnameEntered;
+  $rootScope.navGoNext = function() {
+    UserService.patch($scope.user).then(AppUserService.lastnameEntered);
+  }
 
   NavbarService.validateInit($scope);
 })
