@@ -29,7 +29,7 @@ angular.module('idlecars')
 
     .state('newUser.password', {
       url: '/password',
-      templateUrl: 'shared//users/form.html',
+      templateUrl: 'shared/users/form.html',
       controller: 'newUser.password.controller',
     })
 
