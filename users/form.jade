@@ -40,3 +40,5 @@
     section
       button.slimer-button(ng-show='navbarInfo.enableSave', ng-click='navSave()', ng-disabled="!navNextEnabled") Save
       button.slimer-button(ng-show='navbarInfo.enableNext', ng-click='navGoNext()', ng-disabled="!navNextEnabled") Next
+
+ic-loading(ng-if='isBusy')
