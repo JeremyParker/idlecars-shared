@@ -8,8 +8,7 @@
         div(ng-repeat='field in fields')
           label(for="{{field.name}}") {{field.label}}
           input.no-box(
-            format-tel='{{field.formatTel}}',
-            format-num='{{field.formatNum}}',
+            format-input='{{field.formatInput}}',
             type='{{field.type}}',
             name='{{field.name}}',
             placeholder='{{field.placeholder}}',
