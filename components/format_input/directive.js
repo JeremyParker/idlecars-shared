@@ -53,9 +53,10 @@ angular.module('idlecars')
     link: function (scope, element, attrs) {
 
       element[0].oninput = function () {
-        if (!attrs.formatInput) { return }
-
-        if (attrs.formatInput == 'tel') {
+        if (!attrs.formatInput) {
+          return
+        }
+        else if (attrs.formatInput == 'tel') {
           var new_value = formatTel(element[0].value);
         }
         else if (attrs.formatInput == 'num') {
