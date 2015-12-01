@@ -1,7 +1,7 @@
 'use strict';
 
 angular.module('idlecars')
-.directive('formatNum', function () {
+.directive('formatNum', function ($timeout) {
   return {
     restrict: 'A',
     link: function (scope, element, attrs) {
@@ -26,7 +26,15 @@ angular.module('idlecars')
           counter ++;
         };
 
-        element[0].value = new_value;
+        // TODO: this is very limited. find another way to set ng-model value
+        if (!value) {
+          scope.user[scope.field.name] = null;
+        }
+        else {
+          scope.user[scope.field.name] = value;
+        }
+        console.log('fsad')
+        $timeout(function () { element[0].value = new_value })
       }
     }
   };
