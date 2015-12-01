@@ -33,7 +33,7 @@ angular.module('idlecars')
         else {
           scope.user[scope.field.name] = value;
         }
-        console.log('fsad')
+
         $timeout(function () { element[0].value = new_value })
       }
     }
