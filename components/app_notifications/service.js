@@ -6,6 +6,9 @@ angular.module('idlecars')
 
   service.push = function(message) {
     service.messages.push(message);
+
+    // notification goes off automatically after 15s
+    $timeout(function () { service.messages.pop() }, 15000);
   }
 
   service.remove = function(message) {
