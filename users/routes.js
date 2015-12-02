@@ -41,9 +41,6 @@ angular.module('idlecars')
           templateUrl: 'components/navbar/navbar_main.html',
           controller: 'navbarMain.controller',
         },
-        'content@': {
-          template: '',
-        }
       },
     })
 
