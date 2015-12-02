@@ -2,7 +2,7 @@
 
 angular.module('idlecars')
 
-.controller('newUser.controller', function ($scope, $rootScope, $timeout, UserService) {
+.controller('user.onboarding.controller', function ($scope, $rootScope, $timeout, UserService) {
   $scope.user = {};
 
   UserService.get().then(function (user) {
@@ -13,9 +13,13 @@ angular.module('idlecars')
   $scope.validateForm = function() {
     $timeout(function () { $rootScope.navNextEnabled = $scope.$$childHead.fieldForm.$valid });
   }
+
+  $rootScope.navGoNext = function() {
+    UserService.patch($scope.user).then($scope.$$childHead.postPatch);
+  }
 })
 
-.controller('newUser.email.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
+.controller('user.onboarding.email.controller', function ($scope, AppUserService, NavbarService) {
   $scope.fields = [{
     label: 'Enter your email address',
     placeholder: 'email@address.com',
@@ -25,14 +29,12 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $rootScope.navGoNext = function() {
-    UserService.patch($scope.user).then(AppUserService.emailEntered);
-  }
+  $scope.postPatch = AppUserService.emailEntered;
 
   NavbarService.validateInit($scope);
 })
 
-.controller('newUser.firstname.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
+.controller('user.onboarding.firstname.controller', function ($scope, AppUserService, NavbarService) {
   $scope.fields = [{
     placeholder: 'First name',
     name: 'first_name',
@@ -41,14 +43,12 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $rootScope.navGoNext = function() {
-    UserService.patch($scope.user).then(AppUserService.firstnameEntered);
-  }
+  $scope.postPatch = AppUserService.firstnameEntered;
 
   NavbarService.validateInit($scope);
 })
 
-.controller('newUser.lastname.controller', function ($scope, $rootScope, AppUserService, UserService, NavbarService) {
+.controller('user.onboarding.lastname.controller', function ($scope, AppUserService, NavbarService) {
   $scope.fields = [{
     placeholder: 'Last name',
     name: 'last_name',
@@ -57,9 +57,7 @@ angular.module('idlecars')
     autoFocus: true,
   }];
 
-  $rootScope.navGoNext = function() {
-    UserService.patch($scope.user).then(AppUserService.lastnameEntered);
-  }
+  $scope.postPatch = AppUserService.lastnameEntered;
 
   NavbarService.validateInit($scope);
 })

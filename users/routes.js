@@ -16,7 +16,7 @@ angular.module('idlecars')
         },
         'content@': {
           template: '<ui-view class="flex"/>',
-          controller: 'newUser.controller',
+          controller: function ($scope) { $scope.user = {} },
         }
       },
     })
@@ -33,27 +33,6 @@ angular.module('idlecars')
       controller: 'newUser.password.controller',
     })
 
-    .state('newUser.email', {
-      url: '/email',
-      data: {navbarInfo: {title: 'Email', enableBack: true, enableNext: true}},
-      templateUrl: 'shared/users/form.html',
-      controller: 'newUser.email.controller',
-    })
-
-    .state('newUser.firstname', {
-      url: '/firstname',
-      data: {navbarInfo: {title: 'First name', enableBack: true, enableNext: true}},
-      templateUrl: 'shared/users/form.html',
-      controller: 'newUser.firstname.controller',
-    })
-
-    .state('newUser.lastname', {
-      url: '/lastname',
-      data: {navbarInfo: {title: 'Last name', enableBack: true, enableNext: true}},
-      templateUrl: 'shared/users/form.html',
-      controller: 'newUser.lastname.controller',
-    })
-
     .state('user', {
       abstract: true,
       url: '/users',
@@ -63,37 +42,79 @@ angular.module('idlecars')
           controller: 'navbarMain.controller',
         },
         'content@': {
-          template: '<ui-view class="flex"/>',
-          controller: 'user.controller',
+          template: '',
         }
       },
     })
 
-    .state('user.email', {
+    .state('user.onboarding', {
+      abstract: true,
+      url: '/onboarding',
+      views: {
+        'content@': {
+          template: '<ui-view class="flex"/>',
+          controller: 'user.onboarding.controller',
+        }
+      },
+    })
+
+    .state('user.onboarding.email', {
+      url: '/email',
+      data: {navbarInfo: {title: 'Email', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'user.onboarding.email.controller',
+    })
+
+    .state('user.onboarding.firstname', {
+      url: '/firstname',
+      data: {navbarInfo: {title: 'First name', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'user.onboarding.firstname.controller',
+    })
+
+    .state('user.onboarding.lastname', {
+      url: '/lastname',
+      data: {navbarInfo: {title: 'Last name', enableBack: true, enableNext: true}},
+      templateUrl: 'shared/users/form.html',
+      controller: 'user.onboarding.lastname.controller',
+    })
+
+    .state('user.update', {
+      abstract: true,
+      url: '/update',
+      views: {
+        'content@': {
+          template: '<ui-view class="flex"/>',
+          controller: 'user.update.controller',
+        }
+      },
+    })
+
+    .state('user.update.email', {
       url: '/email',
       data: {navbarInfo: {title: 'Email', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
-      controller: 'user.email.controller',
+      controller: 'user.update.email.controller',
     })
 
-    .state('user.phonenumber', {
+    .state('user.update.phonenumber', {
       url: '/phonenumber',
       data: {navbarInfo: {title: 'Phone number', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
-      controller: 'user.phoneNumber.controller',
+      controller: 'user.update.phoneNumber.controller',
     })
 
-    .state('user.firstname', {
+    .state('user.update.firstname', {
       url: '/firstname',
       data: {navbarInfo: {title: 'First name', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
-      controller: 'user.firstname.controller',
+      controller: 'user.update.firstname.controller',
     })
 
-    .state('user.lastname', {
+    .state('user.update.lastname', {
       url: '/lastname',
       data: {navbarInfo: {title: 'Last name', enableBack: true, enableSave: true}},
       templateUrl: 'shared/users/form.html',
-      controller: 'user.lastname.controller',
+      controller: 'user.update.lastname.controller',
     })
 })
