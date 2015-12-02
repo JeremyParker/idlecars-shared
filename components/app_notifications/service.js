@@ -8,12 +8,16 @@ angular.module('idlecars')
     service.messages.push(message);
 
     // notification goes off automatically after 15s
-    $timeout(function () { service.remove() }, 15000);
+    $timeout(function () { service.timeout(message) }, 7000);
+  }
+
+  service.timeout = function (message) {
+    var index = service.messages.lastIndexOf(message);
+    if (index > -1) { service.remove(index) };
   }
 
   service.remove = function(index) {
-    if (index) { service.messages.splice(index, 1) }
-    else { service.messages.pop() }
+    service.messages.splice(index, 1);
   }
 
   return service;
