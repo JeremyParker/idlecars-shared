@@ -21,10 +21,10 @@ angular.module('idlecars')
     return response;
   }
 
-  var _notifications = function(rejection) {
-    if (!rejection.data) { return []; }
+  var _notifications = function(result) {
+    if (!result.data) { return []; }
 
-    return rejection.data._app_notifications || [];
+    return result.data._app_notifications || [];
   }
 
   return interceptor;
