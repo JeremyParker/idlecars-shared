@@ -16,5 +16,9 @@ angular.module('idlecars')
     return Restangular.one('users', 'me').patch(patchData);
   }
 
+  service.requiredDocs = {
+     zipcode: {dislike: '', state: 'ownerAccount.onboarding.zipcode'},
+  }
+
   return service;
 })
