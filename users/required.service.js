@@ -20,7 +20,7 @@ angular.module('idlecars')
   }
 
   service.requiredDocState = function(user) {
-    if (user) {
+    if (!user) {
       return UserService.get().then(function (user) {
         return _nextMissingDoc(user);
       })
